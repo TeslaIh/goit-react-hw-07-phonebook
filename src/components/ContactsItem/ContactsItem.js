@@ -9,14 +9,14 @@ import {
   Number,
 } from './ContactsItem.styles';
 
-export default function ContactsItem({ id, name, phone, index }) {
+export default function ContactsItem({ id, name, number, index }) {
   const [deleteContact, { isLoading }] = useDeleteContactMutation();
 
   return (
     <Container>
       <IndexNumber>{`${index + 1}.`}</IndexNumber>
       <Name>{name}: </Name>
-      <Number>{phone}</Number>
+      <Number>{number}</Number>
       <ButtonDelete onClick={() => deleteContact(id)} disabled={isLoading}>
         {isLoading ? <Loader size={10} /> : 'Delete'}
       </ButtonDelete>
@@ -25,7 +25,7 @@ export default function ContactsItem({ id, name, phone, index }) {
 }
 
 ContactsItem.propTypes = {
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
 };
