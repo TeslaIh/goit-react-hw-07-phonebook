@@ -6,7 +6,7 @@ export const SectionContainer = styled.section`
 `;
 
 export const Title = styled.h2`
-  color: blueviolet;
+  color: gold;
   font-size: 24px;
   margin-bottom: 15px;
 `;

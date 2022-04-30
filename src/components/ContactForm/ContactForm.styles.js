@@ -4,13 +4,24 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border: 1px solid black;
   margin: auto;
   padding: 15px;
+  background: #232526; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #414345,
+    #232526
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #414345,
+    #232526
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 `;
 
 const Label = styled.label`
   margin-bottom: 10px;
+  color: aqua;
 `;
 
 const InputName = styled.input.attrs(() => ({
@@ -23,6 +34,7 @@ const InputName = styled.input.attrs(() => ({
 }))`
   display: block;
   margin-top: 5px;
+  color: teal;
 `;
 
 const InputNumber = styled.input.attrs(() => ({
@@ -35,6 +47,7 @@ const InputNumber = styled.input.attrs(() => ({
 }))`
   display: block;
   margin-top: 5px;
+  color: teal;
 `;
 
 const ButtonSubmit = styled.button.attrs(() => ({
@@ -45,6 +58,14 @@ const ButtonSubmit = styled.button.attrs(() => ({
   background-color: aqua;
   border-radius: 8px;
   padding: 5px 15px;
+  cursor: pointer;
+  background-color: aqua;
+  transition: color 250ms linear;
+
+  &:hover,
+  &:focus {
+    background-color: green;
+  }
 `;
 
 export { Form, Label, InputName, InputNumber, ButtonSubmit };

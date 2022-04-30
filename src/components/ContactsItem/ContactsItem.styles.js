@@ -12,14 +12,16 @@ const Container = styled.li`
 
 const IndexNumber = styled.span`
   margin-right: 5px;
+  color: pink;
 `;
 
 const Name = styled.span`
   margin-right: 5px;
+  color: pink;
 `;
 
 const Number = styled.span`
-  color: grey;
+  color: blue;
 `;
 
 const ButtonDelete = styled.button.attrs(() => ({
@@ -32,6 +34,7 @@ const ButtonDelete = styled.button.attrs(() => ({
   border-radius: 8px;
   font-size: 14px;
   color: #fff;
+  cursor: pointer;
   background-color: darkgrey;
   transition: color 250ms linear;
 

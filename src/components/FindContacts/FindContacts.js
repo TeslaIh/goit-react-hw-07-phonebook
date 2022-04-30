@@ -9,7 +9,9 @@ FindContacts.propTypes = {
 export default function FindContacts({ filter, setFilter }) {
   return (
     <Label>
-      <span>Find contacts by name: </span>
+      <span>
+        <b>Find contacts by name:</b>
+      </span>
       <Filter value={filter} onChange={e => setFilter(e.target.value)} />
     </Label>
   );
