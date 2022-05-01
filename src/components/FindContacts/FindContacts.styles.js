@@ -6,7 +6,7 @@ const Label = styled.label`
   color: aqua;
 `;
 
-const Filter = styled.input.attrs(() => ({
+const Input = styled.input.attrs(() => ({
   type: 'search',
   name: 'filter',
   autoComplete: 'off',
@@ -15,4 +15,4 @@ const Filter = styled.input.attrs(() => ({
   color: black;
 `;
 
-export { Label, Filter };
+export { Label, Input };
