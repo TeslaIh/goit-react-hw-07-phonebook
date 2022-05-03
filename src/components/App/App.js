@@ -1,15 +1,12 @@
-import { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ContactForm from '../ContactForm';
-import Contacts from '../Contacts';
-import FindContacts from '../FindContacts';
+import Contacts from '../Contacts/Contacts';
+import FindContacts from '../FindContacts/FindContacts';
 import Section from '../Section';
 import { TitleProject } from './App.styles';
 
 export default function App() {
-  const [filter, setFilter] = useState('');
-
   return (
     <div>
       <TitleProject>My Phonebook</TitleProject>
@@ -17,8 +14,8 @@ export default function App() {
         <ContactForm />
       </Section>
       <Section title="Contacts">
-        <FindContacts filter={filter} setFilter={setFilter} />
-        <Contacts filter={filter} />
+        <FindContacts />
+        <Contacts />
       </Section>
       <ToastContainer
         position="top-center"

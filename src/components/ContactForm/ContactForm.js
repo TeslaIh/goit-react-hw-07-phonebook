@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import { checkContact } from 'redux/contacts/contacts-selectors';
 import {
   useAddContactMutation,
-  useGetContactsQuery,
+  contactsApi
 } from 'redux/contacts/contacts-slice';
 import {
   Form,
@@ -17,10 +17,8 @@ import {
 export default function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const [addContact, { isLoading }] = useAddContactMutation();
-  const { data: contacts } = useGetContactsQuery(undefined, {
-    skip: name === '',
-  });
+  const [addContact, { isLoading }] = useAddContactMutation();  
+  const contacts = contactsApi.endpoints.getContacts.useQueryState('').data;
 
   const handleChangeName = e => setName(e.target.value);
 
@@ -41,7 +39,7 @@ export default function ContactForm() {
       return;
     }
 
-    await addContact({ name, number });
+    await addContact({ name: name, phone: number });
     reset();
   };
 

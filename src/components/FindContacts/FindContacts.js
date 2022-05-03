@@ -6,9 +6,7 @@ const FindContacts = () => {
   const dispatch = useDispatch();
   const filter = useSelector(getFilter);
 
-  const changeFieldFilter = e => {
-    dispatch(changeFilter(e.currentTarget.value));
-  };
+  const changeFieldFilter = e => dispatch(changeFilter(e.currentTarget.value));
 
   return (
     <Label>
@@ -21,6 +19,6 @@ const FindContacts = () => {
       />
     </Label>
   );
-}
+};
 
 export default FindContacts;

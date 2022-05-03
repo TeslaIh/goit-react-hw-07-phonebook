@@ -6,11 +6,11 @@ export const contactSlice = createSlice({
 
   reducers: {
     changeFilter(state, { payload }) {
-      state.filter = payload;
+      return state = payload;
     },
   },
 });
 
 export const { changeFilter } = contactSlice.actions;
 export default contactSlice.reducer;
-export const getFilter = state => state.filter.filter;
+export const getFilter = state => state.filter;
