@@ -1,19 +1,24 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Label, Input } from './FindContacts.styles';
-import { changeFilter } from 'redux/contacts/contacts-filter';
+import { changeFilter, getFilter } from 'redux/contacts/contacts-filter';
 
-function FindContacts() {
+const FindContacts = () => {
   const dispatch = useDispatch();
+  const filter = useSelector(getFilter);
 
   const changeFieldFilter = e => {
-    const value = e.currentTarget.value;
-    dispatch(changeFilter(value));
+    dispatch(changeFilter(e.currentTarget.value));
   };
 
   return (
     <Label>
       <b>Find contacts by name:</b>
-      <Input type="text" onChange={changeFieldFilter} name="filter" />
+      <Input
+        type="text"
+        value={filter}
+        onChange={changeFieldFilter}
+        name="filter"
+      />
     </Label>
   );
 }
