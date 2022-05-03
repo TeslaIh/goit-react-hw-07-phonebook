@@ -13,4 +13,4 @@ export const contactSlice = createSlice({
 
 export const { changeFilter } = contactSlice.actions;
 export default contactSlice.reducer;
-export const getFilter = state => state.contacts.filter;
+export const getFilter = state => state.filter.filter;
